@@ -1,4 +1,4 @@
-use assme2::websocket::{websocket::get_event, block_receipts::{get_block_receipts, process_receipts}};
+use assme2::{websocket::{websocket::get_event, block_receipts::{get_block_receipts, process_receipts}}, api::api::register_route, db::db::{setup_db, KVStore}};
 
 // 1. get event from websocket
 // 2. parse event and get routeId
@@ -7,8 +7,5 @@ use assme2::websocket::{websocket::get_event, block_receipts::{get_block_receipt
 
 #[tokio::main]
 async fn main() {
-    // get_event().await;
-    let logs = get_block_receipts(8578133).await;
-    println!("{:?}", logs);
-    process_receipts(logs).await;
+    get_event().await;
 }

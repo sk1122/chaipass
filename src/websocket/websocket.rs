@@ -7,7 +7,7 @@ use super::block_receipts::{get_block_receipts, process_receipts};
 pub async fn get_event() {
     // Connect to the WS server locally
     let (mut socket, _response) = connect(
-        Url::parse("wss://eth-goerli.g.alchemy.com/v2/eqE3zeVND3stKdCjZdLOqU62A2jg6eJc").unwrap(),
+        Url::parse("wss://eth-mainnet.g.alchemy.com/v2/eqE3zeVND3stKdCjZdLOqU62A2jg6eJc").unwrap(),
     )
     .expect("Can't connect");
 
